@@ -49,5 +49,20 @@ class Board
         row, column = location
         grid[row][column] == NullPiece.instance
     end
+
+    def move_piece(start_pos, end_pos)
+        #Validate end position is in a safe move
+        piece = self[start_pos]
+        if !piece.safe_moves.include?(end_pos)
+            raise InvalidMoveErr.new(
+                "End position (#{end_pos}) not in available moves: #{piece.safe_moves}"
+            )
+        end
+        if !in_bounds?(end_pos)
+            raise InvalidMoveErr.new ('end position not in bounds')
+        end
+        move_piece!(start_pos, end_pos)
+    end
+    
 end
 

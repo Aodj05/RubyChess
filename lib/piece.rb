@@ -8,6 +8,11 @@ class Piece
         @location = location
     end
 
+    # Available moves not going into check
+    def safe_moves
+        
+    end
+
     def enemy?(location)
         board.in_bounds?(location) && board[location].color != color
     end
