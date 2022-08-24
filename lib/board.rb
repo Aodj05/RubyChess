@@ -10,6 +10,15 @@ class Board
 
         [Rook, Knight, Bishop, Queen, King, Bishop, Knight,
         Rook].each_with_index do |piece_klass, column|
+            [[0, :black], [7, :white]].each do |(row, color)|
+                location = [row, column]
+                board[location] = piece_klass.new(
+                    board,
+                    location,
+                    color
+                )
+            end
+        end
     end
 
 
@@ -34,6 +43,11 @@ class Board
         column < grid.first.length &&
         row >= 0 &&
         column >= 0
+    end
+
+    def empty?(location)
+        row, column = location
+        grid[row][column] == NullPiece.instance
     end
 end
 
