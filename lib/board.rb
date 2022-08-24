@@ -1,16 +1,23 @@
 class Board
     attr_reader :grid
 
-    def initialize
-        @grid = [
-            ["X", "X", nil, "X"],
-            ["X", "X", nil, "X"],
-            ["X", "X", nil, "X"],
-            ["X", "X", nil, "X"]
-        ]
+    def self.start_game
+        board = self.new
+        8.times do |c|
+            board[[1, c]] = Pawn.new(board, [1, c], :black)
+            board[[6, c]] = Pawn.new(board, [6, c], :white)
+        end
+
+        [Rook, Knight, Bishop, Queen, King, Bishop, Knight,
+        Rook].each_with_index do |piece_klass, column|
     end
 
-    def [] = (location, piece)
+
+    def initialize
+       @grid = Array.new(8) { Array.new(8, NullPiece.instance) }
+    end
+
+    def []=(location, piece)
         row, column = location
         grid[row][column] = piece
     end

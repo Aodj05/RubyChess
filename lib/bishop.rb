@@ -1,5 +1,4 @@
-class Bishop
-
+class Bishop < Piece
     def to_s
         color == :black ? "♝" : "♗"
     end

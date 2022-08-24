@@ -1,4 +1,4 @@
-class Queen
+class Queen < Piece
     def to_s
         color == :black ? "♛" : "♕"
     end

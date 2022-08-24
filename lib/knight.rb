@@ -1,4 +1,4 @@
-class Knight
+class Knight < Piece
 
     def to_s
         color == :black ? "♞" : "♘"

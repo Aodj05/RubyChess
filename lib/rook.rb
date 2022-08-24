@@ -1,4 +1,4 @@
-class Rook
+class Rook < Piece
 
     def to_s
         color == :black ? "♜" : "♖"
