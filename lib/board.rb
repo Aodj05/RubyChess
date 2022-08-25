@@ -103,7 +103,6 @@ class Board
         # update piece's position with end position
         self[end_pos].location = end_pos
     end
-    
 
     def dup
         new_board = Board.new

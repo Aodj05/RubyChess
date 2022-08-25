@@ -5,7 +5,7 @@ class Knight < Piece
         color == :black ? "♞" : "♘"
     end
 
-    def method_name
+    def move_dirs
         [
             [1, 2],
             [2, 1],
