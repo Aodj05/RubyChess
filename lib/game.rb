@@ -34,7 +34,6 @@ class Game
     def over?
         board.checkmate?(current_player.color)
     end
-    
 
     def take_turn
         start_pos = nil

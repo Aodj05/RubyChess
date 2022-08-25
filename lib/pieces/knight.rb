@@ -4,7 +4,7 @@ class Knight < Piece
     def to_s
         color == :black ? "♞" : "♘"
     end
-    
+
     def method_name
         [
             [1, 2],

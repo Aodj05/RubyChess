@@ -9,6 +9,7 @@ class Pawn < Piece
     end
 
     def available_moves
+        # move forward 1 space
         moves = []
 
         one_forward = [current_r + forward_dir, current_c]
